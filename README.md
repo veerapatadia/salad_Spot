@@ -30,7 +30,10 @@ you think about salads forever!
 ![Screenshot_20240401_004247](https://github.com/veerapatadia/salad_Spot/assets/150000048/3718e4d3-c633-48d3-a4ef-5100172992fe)
 ![Screenshot_20240401_004354](https://github.com/veerapatadia/salad_Spot/assets/150000048/24cff812-6770-462b-8a52-580a5e072e06)
 
-Uploading saladspot.mp4…
+
+
+![Screenshot_20240401_004152](https://github.com/veerapatadia/salad_Spot/assets/150000048/277356ff-e394-4029-942e-ee7ab27ed2a1)
+
 
 
 
