@@ -1,12 +1,18 @@
+import 'package:path_provider/path_provider.dart';
+import 'package:pdf/pdf.dart';
+import 'package:pdf/widgets.dart' as pw;
+
 class ProductData {
   static List<Map<String, dynamic>> cartProductData = [];
   static Set<Map<String, dynamic>> cartData = {};
+
   static void convertUniqueData() {
     cartProductData = cartData.toList();
   }
 
   static List<Map<String, dynamic>> favProductData = [];
   static Set<Map<String, dynamic>> favData = {};
+
   static void convertData() {
     favProductData = favData.toList();
   }
@@ -19,6 +25,13 @@ class ProductData {
     return sum;
   }
 
+  static num taxTotal() {
+    num plus = 0.0;
+    num tax = 18;
+    plus = (tax * totalprice()) / 100;
+    return plus;
+  }
+
   static num grandtotal() {
     num add = 0.0;
     for (var element in cartProductData) {
@@ -26,6 +39,10 @@ class ProductData {
     }
     return add;
   }
+
+  static String pdfName = "SaladSpot";
+  PdfColor pdfPrimaryBlack = PdfColors.green;
+  PdfColor pdfPrimaryGreen = PdfColors.green900;
 
   static List<Map<String, dynamic>> allProductData = <Map<String, dynamic>>[
     {
@@ -98,6 +115,7 @@ class ProductData {
           "average": "8-10",
           "like": false,
           "delivery": 3.50,
+          "tax": 5.0,
           "category": "salad",
           "count": 0,
           "total": 12.00,
@@ -124,6 +142,7 @@ class ProductData {
           "like": false,
           "category": "popularity",
           "kcal": 320,
+          "tax": 5.0,
           "delivery": 3.50,
           "count": 0,
           "total": 11.00,
@@ -153,6 +172,7 @@ class ProductData {
           "average": "5-7",
           "like": false,
           "delivery": 3.50,
+          "tax": 5.0,
           "category": "hot sale",
           "kcal": 100,
           "total": 9.00,
@@ -178,6 +198,7 @@ class ProductData {
           "average": "6-8",
           "like": false,
           "delivery": 3.50,
+          "tax": 5.0,
           "category": "salad",
           "count": 0,
           "total": 10.00,
@@ -211,6 +232,7 @@ class ProductData {
           "kcal": 200,
           "count": 0,
           "delivery": 3.50,
+          "tax": 5.0,
           "total": 8.00,
           "ingradients": ["🫑", "🌽", "🧀", "🍅", "🧅", "🍍"],
           "thumbnail":
@@ -233,6 +255,7 @@ class ProductData {
           "average": "10-15",
           "like": true,
           "delivery": 3.50,
+          "tax": 5.0,
           "kcal": 180,
           "count": 0,
           "total": 9.00,
@@ -264,6 +287,7 @@ class ProductData {
           "like": true,
           "kcal": 220,
           "delivery": 3.50,
+          "tax": 5.0,
           "total": 9.00,
           "category": "salad",
           "count": 0,
@@ -290,9 +314,10 @@ class ProductData {
           "kcal": 200,
           "total": 10.00,
           "delivery": 3.50,
+          "tax": 5.0,
           "category": "popularity",
           "count": 0,
-          "ingradients": ["🧅", "🥒", "🍅", "🧀", "🍆", "🧄", "🫛"],
+          "ingredients": ["🧅", "🥒", "🍅", "🧀", "🍆", "🧄", "🫛"],
           "thumbnail":
               "https://natashaskitchen.com/wp-content/uploads/2019/02/Greek-Salad-768x1152.jpg",
           "image": [

@@ -14,7 +14,6 @@ class home_page extends StatefulWidget {
 
 class _home_pageState extends State<home_page> {
   bool isTapped = false;
-  bool isAdded = false;
   dynamic? salad;
   @override
   Widget build(BuildContext context) {
@@ -304,7 +303,7 @@ class _home_pageState extends State<home_page> {
                     children: [
                       ...ProductData.allProductData.map(
                         (e) => Container(
-                          // color: Colors.pink,
+                          //color: Colors.pink,
                           height: 300,
                           width: 460,
                           child: Row(
@@ -361,18 +360,18 @@ class _home_pageState extends State<home_page> {
                                                                       .add(e);
                                                                   ProductData
                                                                       .convertData();
-                                                                  isAdded =
-                                                                      !isAdded;
+                                                                  e['like'] =
+                                                                      !e['like'];
                                                                 },
                                                               );
                                                             },
                                                             child: Icon(
-                                                              isAdded
+                                                              e['like']
                                                                   ? Icons
                                                                       .favorite
                                                                   : Icons
                                                                       .favorite_border,
-                                                              color: isAdded
+                                                              color: e['like']
                                                                   ? Colors.red
                                                                   : Colors
                                                                       .black,

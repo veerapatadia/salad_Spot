@@ -389,21 +389,26 @@ class _cart_pageState extends State<cart_page> {
                               ],
                             ),
                           ),
-                          Container(
-                            height: 70,
-                            width: 360,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              color: Colors.green,
-                            ),
-                            alignment: Alignment.center,
-                            child: Text(
-                              "CHECKOUT",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                                letterSpacing: 1,
-                                fontSize: 20,
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).pushNamed('bill_page');
+                            },
+                            child: Container(
+                              height: 70,
+                              width: 360,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                color: Colors.green,
+                              ),
+                              alignment: Alignment.center,
+                              child: Text(
+                                "CHECKOUT",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                  letterSpacing: 1,
+                                  fontSize: 20,
+                                ),
                               ),
                             ),
                           ),
