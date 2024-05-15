@@ -1,21 +1,25 @@
 import 'dart:io';
-import 'package:coreflutter/utils/all_products_data.dart';
-import 'package:coreflutter/utils/textstyle.dart';
+
+import 'package:coreflutter/Utils/all_products_data.dart';
+import 'package:coreflutter/Utils/textstyle.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:coreflutter/Utils/global_data.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 
-class bill_page extends StatefulWidget {
-  const bill_page({super.key});
+import '../Utils/global_data.dart';
+
+class bill_Page extends StatefulWidget {
+  const bill_Page({super.key});
 
   @override
-  State<bill_page> createState() => _bill_pageState();
+  State<bill_Page> createState() => _bill_PageState();
 }
 
-class _bill_pageState extends State<bill_page> {
+class _bill_PageState extends State<bill_Page> {
   final pw.Document pdf = pw.Document();
   @override
   void initState() {
@@ -74,12 +78,15 @@ class _bill_pageState extends State<bill_page> {
                                     )
                                   ],
                                 ),
+                                pw.SizedBox(
+                                  height: 5,
+                                ),
                                 pw.Column(
                                   children: [
                                     pw.Column(
                                       children: [
                                         pw.Text(
-                                          "Near St.Mary School, Kalawad Road",
+                                          "Near St.Mary School,Kalawad Road Rajkot",
                                           style: TextStyling.style4,
                                         ),
                                       ],
@@ -111,7 +118,7 @@ class _bill_pageState extends State<bill_page> {
                                   mainAxisAlignment: pw.MainAxisAlignment.end,
                                   children: [
                                     pw.Text(
-                                      "1111",
+                                      "0905",
                                       style: TextStyling.style4,
                                     ),
                                   ],
@@ -145,104 +152,129 @@ class _bill_pageState extends State<bill_page> {
                   //color: Colors.blue,
                 ),
               ),
+              pw.Divider(
+                color: PdfColors.green,
+                thickness: 2,
+              ),
               pw.Expanded(
                 flex: 3,
                 child: pw.Container(
                   child: pw.Padding(
                     padding: const pw.EdgeInsets.only(left: 16, right: 16),
-                    child: pw.Column(
+                    child: pw.Row(
                       children: [
                         pw.Padding(
                           padding: const pw.EdgeInsets.only(top: 10),
-                          child: pw.Divider(
-                            thickness: 2,
-                            color: PdfColors.green,
-                          ),
                         ),
-                        pw.Row(
-                          mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
-                          children: [
-                            pw.Padding(
+                        pw.Expanded(
+                          child: pw.Container(
+                            //color: Colors.red,
+                            child: pw.Padding(
                               padding: const pw.EdgeInsets.only(top: 20),
-                              child: pw.Column(
+                              child: pw.Row(
                                 children: [
-                                  pw.Text(
-                                    "Description",
-                                    style: TextStyling.style3,
-                                  ),
-                                ],
-                              ),
-                            ),
-                            pw.Padding(
-                              padding:
-                                  const pw.EdgeInsets.only(left: 50, top: 20),
-                              child: pw.Column(
-                                children: [
-                                  pw.Text(
-                                    "Price",
-                                    style: TextStyling.style3,
-                                  ),
-                                ],
-                              ),
-                            ),
-                            pw.Padding(
-                              padding: const pw.EdgeInsets.only(top: 20),
-                              child: pw.Text(
-                                "Qty",
-                                style: TextStyling.style3,
-                              ),
-                            ),
-                            pw.Padding(
-                              padding: const pw.EdgeInsets.only(top: 20),
-                              child: pw.Text(
-                                "Total",
-                                style: TextStyling.style3,
-                              ),
-                            ),
-                          ],
-                        ),
-                        pw.Column(
-                          children: [
-                            ...ProductData.cartProductData.map(
-                              (e) => pw.Padding(
-                                padding: const pw.EdgeInsets.only(top: 20),
-                                child: pw.Row(
-                                  mainAxisAlignment:
-                                      pw.MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    pw.Column(
-                                      children: [
-                                        pw.Text(
-                                          "${e['title']}",
-                                          style: TextStyling.style4,
-                                        ),
-                                      ],
-                                    ),
-                                    pw.Padding(
-                                      padding:
-                                          const pw.EdgeInsets.only(left: 50),
-                                      child: pw.Column(
+                                  pw.Column(
+                                    crossAxisAlignment:
+                                        pw.CrossAxisAlignment.start,
+                                    children: [
+                                      pw.Row(
                                         children: [
                                           pw.Text(
-                                            "${e['price']}",
-                                            style: TextStyling.style4,
+                                            "Description",
+                                            style: TextStyling.style3,
                                           ),
                                         ],
                                       ),
-                                    ),
-                                    pw.Text(
-                                      "${e['count']}",
-                                      style: TextStyling.style4,
-                                    ),
-                                    pw.Text(
-                                      "${e['total']}",
-                                      style: TextStyling.style4,
-                                    ),
-                                  ],
-                                ),
+                                      pw.Column(
+                                        children: [
+                                          ...ProductData.cartProductData.map(
+                                            (e) => pw.Padding(
+                                              padding: const pw.EdgeInsets.only(
+                                                  top: 20),
+                                              child: pw.Row(
+                                                children: [
+                                                  pw.Column(
+                                                    crossAxisAlignment: pw
+                                                        .CrossAxisAlignment
+                                                        .start,
+                                                    children: [
+                                                      pw.Text(
+                                                        "${e['title']}",
+                                                        style:
+                                                            TextStyling.style4,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ],
                               ),
                             ),
-                          ],
+                          ),
+                        ),
+                        pw.Expanded(
+                          child: pw.Container(
+                            //color: Colors.amber,
+                            child: pw.Padding(
+                              padding: const pw.EdgeInsets.only(top: 20),
+                              child: pw.Column(
+                                children: [
+                                  pw.Row(
+                                    mainAxisAlignment:
+                                        pw.MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      pw.Text(
+                                        "Price",
+                                        style: TextStyling.style3,
+                                      ),
+                                      pw.Text(
+                                        "Qty",
+                                        style: TextStyling.style3,
+                                      ),
+                                      pw.Text(
+                                        "Total",
+                                        style: TextStyling.style3,
+                                      ),
+                                    ],
+                                  ),
+                                  pw.Column(
+                                    children: [
+                                      ...ProductData.cartProductData.map(
+                                        (e) => pw.Padding(
+                                          padding:
+                                              const pw.EdgeInsets.only(top: 20),
+                                          child: pw.Row(
+                                            mainAxisAlignment: pw
+                                                .MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              pw.Text(
+                                                "${e['price']}",
+                                                style: TextStyling.style4,
+                                              ),
+                                              pw.Text(
+                                                "${e['count']}",
+                                                style: TextStyling.style4,
+                                              ),
+                                              pw.Text(
+                                                "${e['total']}",
+                                                style: TextStyling.style4,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -351,7 +383,7 @@ class _bill_pageState extends State<bill_page> {
                                         style: TextStyling.style3,
                                       ),
                                       pw.Text(
-                                        "5.0",
+                                        "18%",
                                         style: TextStyling.style4,
                                       ),
                                     ],
@@ -406,11 +438,11 @@ class _bill_pageState extends State<bill_page> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "SaladSpot",
+                      "Salad Spot",
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 30,
-                          color: Colors.green.shade800),
+                          color: Colors.green.shade900),
                     ),
                   ],
                 ),
@@ -450,7 +482,7 @@ class _bill_pageState extends State<bill_page> {
                                 Column(
                                   children: [
                                     Text(
-                                      "Near St. Mary School, Kalawad Road",
+                                      "Near St.Mary School, Kalawad Road Rajkot",
                                       style: TextStyling.style2,
                                     ),
                                   ],
@@ -482,7 +514,7 @@ class _bill_pageState extends State<bill_page> {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 Text(
-                                  "1111",
+                                  "0905",
                                   style: TextStyling.style2,
                                 ),
                               ],
@@ -516,101 +548,125 @@ class _bill_pageState extends State<bill_page> {
               //color: Colors.blue,
             ),
           ),
+          Divider(
+            color: Colors.black,
+            thickness: 2,
+          ),
           Expanded(
             flex: 3,
             child: Container(
               child: Padding(
                 padding: const EdgeInsets.only(left: 16, right: 16),
-                child: Column(
+                child: Row(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: Divider(
-                        thickness: 2,
-                        color: Colors.black,
-                      ),
+                      padding: const EdgeInsets.only(top: 20),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Padding(
+                    Expanded(
+                      child: Container(
+                        //color: Colors.red,
+                        child: Padding(
                           padding: const EdgeInsets.only(top: 20),
-                          child: Column(
+                          child: Row(
                             children: [
-                              Text(
-                                "Description",
-                                style: TextStyling.style,
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 50, top: 20),
-                          child: Column(
-                            children: [
-                              Text(
-                                "Price",
-                                style: TextStyling.style,
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20),
-                          child: Text(
-                            "Qty",
-                            style: TextStyling.style,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20),
-                          child: Text(
-                            "Total",
-                            style: TextStyling.style,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        ...ProductData.cartProductData.map(
-                          (e) => Padding(
-                            padding: const EdgeInsets.only(top: 20),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Column(
-                                  children: [
-                                    Text(
-                                      "${e['title']}",
-                                      style: TextStyling.style2,
-                                    ),
-                                  ],
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 50),
-                                  child: Column(
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
                                     children: [
                                       Text(
-                                        "${e['price']}",
-                                        style: TextStyling.style2,
+                                        "Description",
+                                        style: TextStyling.style,
                                       ),
                                     ],
                                   ),
-                                ),
-                                Text(
-                                  "${e['count']}",
-                                  style: TextStyling.style2,
-                                ),
-                                Text(
-                                  "${e['total']}",
-                                  style: TextStyling.style2,
-                                ),
-                              ],
-                            ),
+                                  Column(
+                                    children: [
+                                      ...ProductData.cartProductData.map(
+                                        (e) => Padding(
+                                          padding:
+                                              const EdgeInsets.only(top: 20),
+                                          child: Row(
+                                            children: [
+                                              Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    "${e['title']}",
+                                                    style: TextStyling.style2,
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ],
                           ),
                         ),
-                      ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        //color: Colors.amber,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 20),
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Price",
+                                    style: TextStyling.style,
+                                  ),
+                                  Text(
+                                    "Qty",
+                                    style: TextStyling.style,
+                                  ),
+                                  Text(
+                                    "Total",
+                                    style: TextStyling.style,
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                children: [
+                                  ...ProductData.cartProductData.map(
+                                    (e) => Padding(
+                                      padding: const EdgeInsets.only(top: 20),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            "${e['price']}",
+                                            style: TextStyling.style2,
+                                          ),
+                                          Text(
+                                            "${e['count']}",
+                                            style: TextStyling.style2,
+                                          ),
+                                          Text(
+                                            "${e['total']}",
+                                            style: TextStyling.style2,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -687,7 +743,7 @@ class _bill_pageState extends State<bill_page> {
                     child: Container(
                       child: Padding(
                         padding:
-                            const EdgeInsets.only(left: 16, right: 16, top: 20),
+                            const EdgeInsets.only(left: 12, right: 16, top: 20),
                         child: Column(
                           children: [
                             Padding(
@@ -718,7 +774,7 @@ class _bill_pageState extends State<bill_page> {
                                     style: TextStyling.style,
                                   ),
                                   Text(
-                                    "5.0",
+                                    "18%",
                                     style: TextStyling.style2,
                                   ),
                                 ],
@@ -735,10 +791,10 @@ class _bill_pageState extends State<bill_page> {
                                     style: TextStyling.style,
                                   ),
                                   Text(
-                                    "\$ ${ProductData.taxTotal()}",
+                                    "\$${ProductData.taxTotal()}",
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 20),
+                                        fontSize: 19),
                                   ),
                                 ],
                               ),

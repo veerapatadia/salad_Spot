@@ -14,7 +14,7 @@ void main() {
         'product_detail_page': (context) => product_detail_page(),
         'cart_page': (context) => cart_page(),
         'favourite_page': (context) => favourite_page(),
-        'bill_page': (context) => bill_page(),
+        'bill_page': (context) => bill_Page(),
       },
     ),
   );

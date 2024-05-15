@@ -28,7 +28,7 @@ class ProductData {
   static num taxTotal() {
     num plus = 0.0;
     num tax = 18;
-    plus = (tax * totalprice()) / 100;
+    plus = (tax * totalprice()) / 100 + totalprice();
     return plus;
   }
 
