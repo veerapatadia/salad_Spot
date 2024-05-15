@@ -29,8 +29,8 @@ you think about salads forever!
 ![Screenshot_20240401_004247](https://github.com/veerapatadia/salad_Spot/assets/150000048/a8918cf8-342d-4182-8d6b-bccfe307d7ee)
 ![Screenshot_20240401_004311](https://github.com/veerapatadia/salad_Spot/assets/150000048/28af4abc-c715-48aa-a8dd-8871174f78a0)
 ![Screenshot_20240401_004354](https://github.com/veerapatadia/salad_Spot/assets/150000048/4cd21f19-41b4-4f3f-8553-32c31e99fa90)
-
-
+![Screenshot_20240515_115942](https://github.com/veerapatadia/salad_Spot/assets/150000048/79a6a500-54d7-4ebf-98cb-247a3bd5667a)
+![Screenshot_20240515_155310](https://github.com/veerapatadia/salad_Spot/assets/150000048/ec76f081-bf79-4329-836a-d06930029805)
 
 
 
