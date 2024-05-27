@@ -24,6 +24,8 @@ nutrient-packed meals, SaladSpot is here to support you every step of the way.
 Download SaladSpot now and embark on a culinary journey that will transform the way
 you think about salads forever!
 
+https://github.com/veerapatadia/salad_Spot/assets/150000048/157cbbfb-0cd7-4509-b016-7323987c669b
+
 ![Screenshot_20240401_004152](https://github.com/veerapatadia/salad_Spot/assets/150000048/f9575ed0-5880-4c9f-ac24-29af9e70c09e)
 ![Screenshot_20240401_004228](https://github.com/veerapatadia/salad_Spot/assets/150000048/a867ca28-ad53-4a4d-b168-fb7fcae73787)
 ![Screenshot_20240401_004247](https://github.com/veerapatadia/salad_Spot/assets/150000048/a8918cf8-342d-4182-8d6b-bccfe307d7ee)
