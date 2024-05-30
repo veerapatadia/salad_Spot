@@ -23,3 +23,17 @@ nutrient-packed meals, SaladSpot is here to support you every step of the way.
 
 Download SaladSpot now and embark on a culinary journey that will transform the way
 you think about salads forever!
+
+https://github.com/veerapatadia/salad_Spot/assets/150000048/157cbbfb-0cd7-4509-b016-7323987c669b
+
+![Screenshot_20240401_004152](https://github.com/veerapatadia/salad_Spot/assets/150000048/f9575ed0-5880-4c9f-ac24-29af9e70c09e)
+![Screenshot_20240401_004228](https://github.com/veerapatadia/salad_Spot/assets/150000048/a867ca28-ad53-4a4d-b168-fb7fcae73787)
+![Screenshot_20240401_004247](https://github.com/veerapatadia/salad_Spot/assets/150000048/a8918cf8-342d-4182-8d6b-bccfe307d7ee)
+![Screenshot_20240401_004311](https://github.com/veerapatadia/salad_Spot/assets/150000048/28af4abc-c715-48aa-a8dd-8871174f78a0)
+![Screenshot_20240401_004354](https://github.com/veerapatadia/salad_Spot/assets/150000048/4cd21f19-41b4-4f3f-8553-32c31e99fa90)
+![Screenshot_20240515_115942](https://github.com/veerapatadia/salad_Spot/assets/150000048/79a6a500-54d7-4ebf-98cb-247a3bd5667a)
+![Screenshot_20240515_155310](https://github.com/veerapatadia/salad_Spot/assets/150000048/ec76f081-bf79-4329-836a-d06930029805)
+
+
+
+
